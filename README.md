@@ -13,3 +13,5 @@ a system that is flexible and can take in an input of any of the files here to u
 **Notices**
 * Please use ```namespace Cypher.Utils``` as the namespace for all the programs (just paste at the top)
 * (this may change in future if the program grows to the stage that multiple namespaces are required to organise various classes but this should not be a problem for the forseable future)
+* Feel free to update the ASCII art on main if you have a better idea
+* Options 5 and up on main are yet to be added
