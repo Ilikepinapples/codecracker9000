@@ -1,1 +1,1 @@
-Put details a of the program here
+Put details and description of the program here
