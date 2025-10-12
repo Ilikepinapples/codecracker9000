@@ -4,22 +4,22 @@
 using System;
 using System.Linq.Expressions;
 using System.Net;
-using Cypher.Utils; // Assuming this contains your CaesarShift and PlayfairCipher classes
+using Cypher.Utils; 
 
 class MainProgram
 {
     static void Main()
     {
         // Initialize variables
-        string onlinePoints = "0";  // Points from online storage
-        string localPoints = "0";   // Local points (not currently used)
+        string onlinePoints = "0"; 
+        string localPoints = "0";   
         string userVersion = "1.0.0"; // Current program version
         string versionUrl = "https://raw.githubusercontent.com/Ilikepinapples/codecracker9000/refs/heads/main/version.txt"; // URL for latest version
         string pointsUrl = "https://raw.githubusercontent.com/Ilikepinapples/codecracker9000/refs/heads/main/points.txt"; // URL for online points
-        string restartStr = "hi world"; // Temporary variable to check if user wants to quit
-        bool restart = true; // Controls the main loop
+        string restartStr = "hi world"; 
+        bool restart = true; // Main loop
 
-        // --- Version check ---
+        // Checking the version
         using (WebClient client = new WebClient())
         {
             string onlineVersion = client.DownloadString(versionUrl).Trim();
@@ -43,7 +43,7 @@ class MainProgram
             onlinePoints = client.DownloadString(pointsUrl).Trim();
         }
 
-        // --- Main loop ---
+        // Shove everything inside this loop
         while (restart == true)
         {
             Console.WriteLine($"\n=== Epic Encryption Toolkit ===");
@@ -70,7 +70,7 @@ class MainProgram
 ║ |_|                                                            ║      
 ╠════════════════════════════════════════════════════════════════╣
 ║                          Cypher Toolkit                        ║
-║                V{userVersion}  •  by Probability is pain               ║
+║                V{userVersion}  •  by Probability is pain               ║ // Compensates for the {} so DONT move
 ╠════════════════════════════════════════════════════════════════╣
 ║  1) Ceaser Cypher            |       6) Points checker         ║
 ║  2) Frequency Analysis       |       7) Leaderboard            ║
