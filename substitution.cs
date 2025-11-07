@@ -2,7 +2,7 @@
 
 namespace Cypher.Utils
 {
-    internal class Program
+    internal class Substitution
     {
         static char[] englishfrequent = {'E','T','A','O','I','N','S','H','R','D','L','C','U','M','W','F','G','Y','P','B','V','K','J','X','Q','Z'};
 
@@ -98,6 +98,7 @@ namespace Cypher.Utils
 
     }
 }
+
 
 
 
