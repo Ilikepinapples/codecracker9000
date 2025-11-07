@@ -1,30 +1,38 @@
 using System;
+using System.Text;
+
 namespace Cypher.Utils
 {
     public static class CaesarShift
     {
         public static string EncryptDecrypt(string text, int shift, bool decrypt = false)
         {
-            if (string.IsNullOrEmpty(text)) return "";
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
 
+            // Normalize shift so it always sits between 0–25
+            shift = ((shift % 26) + 26) % 26;
             if (decrypt)
-                shift = 26 - shift;
+                shift = -shift;
 
-            string output = "";
+            var output = new StringBuilder(text.Length);
+
             foreach (char c in text)
             {
                 if (char.IsLetter(c))
                 {
                     char baseChar = char.IsUpper(c) ? 'A' : 'a';
-                    char shifted = (char)((((c - baseChar) + shift) % 26) + baseChar);
-                    output += shifted;
+                    // add 26 before mod to avoid negatives when decrypting
+                    char shifted = (char)(((c - baseChar + shift + 26) % 26) + baseChar);
+                    output.Append(shifted);
                 }
                 else
                 {
-                    output += c;
+                    output.Append(c);
                 }
             }
-            return output;
+
+            return output.ToString();
         }
     }
 }
